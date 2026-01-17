@@ -278,18 +278,12 @@
         </div>
     </div>
 
-    <!-- JavaScript Files -->
-    <!-- Configuration - Update these with your backend and Google OAuth credentials -->
+
+    <!-- CONFIGURATION -->
     <script>
-        // Set your backend API URL here
-        window.API_BASE_URL = 'http://localhost:5000/api'; // Update with your deployed backend URL
-        
-        // Set your Google Client ID here (get it from https://console.cloud.google.com/)
-        window.GOOGLE_CLIENT_ID = '953100595516-sbb8e603dlrvn3td3vtj1mat0of1guin.apps.googleusercontent.com';
+        window.API_BASE_URL = 'https://aklat-backend.onrender.com/api';
+        console.log('API Base URL configured for cart:', window.API_BASE_URL);
     </script>
-    
-    <!-- Google Sign-In -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     
     <!-- JavaScript Files -->
     <script src="auth.js"></script>
