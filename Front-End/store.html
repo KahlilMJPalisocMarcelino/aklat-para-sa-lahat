@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection - Aklat</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Same Header as index.html -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="Images/AklatLogoHeader.png" alt="Aklat Logo">
+                    <span class="logo-text">Aklat. Para Sa Lahat.</span>
+                </a>
+
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="store.html" class="nav-link active">Our Store</a>
+                    <a href="cart.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart <span id="cart-count">0</span>
+                    </a>
+                    
+                    <div class="auth-buttons" id="auth-buttons">
+                        <button class="btn login-btn" id="login-btn">Login</button>
+                        <button class="btn signup-btn" id="signup-btn">Sign Up</button>
+                    </div>
+                    
+                    <div class="user-menu" id="user-menu">
+                        <div class="user-avatar" id="user-avatar"></div>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="#profile"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="#orders"><i class="fas fa-shopping-bag"></i> My Orders</a>
+                            <a href="cart.html"><i class="fas fa-shopping-cart"></i> My Cart</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Store/Collection Page -->
+    <main class="store-page">
+        <div class="store-header">
+            <h1 class="store-title">Our Collection</h1>
+            <p class="store-subtitle">Browse our current stock of available books all in one place.</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-section">
+            <div class="filters-container">
+                <div class="filter-title">Filter by Category:</div>
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All Categories</button>
+                    <button class="filter-btn" data-filter="fiction">Fiction</button>
+                    <button class="filter-btn" data-filter="non-fiction">Non-Fiction</button>
+                    <button class="filter-btn" data-filter="staff">Staff Recommended</button>
+                    <button class="filter-btn" data-filter="other">Other</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="books-grid-container">
+            <div class="books-grid" id="books-grid">
+                <!-- Books will be loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Same Footer as index.html -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="Images/AklatLogoFooter.png" alt="Aklat Logo">
+                    </a>
+                </div>
+
+                <div class="footer-nav">
+                    <h4 class="footer-title">Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Our Collection</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact Details</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Mabuhay Street, Barangay Maligaya, Quezon City, Metro Manila, Philippines</p>
+                    <p><i class="fas fa-envelope"></i> aklahat@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +63 912 345 6789</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">Copyright &copy; 2025 Aklat. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+   <!-- Authentication Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 id="modal-title">Welcome to Aklat</h3>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form class="auth-form active" id="login-form">
+                <div class="form-group">
+                    <input type="email" id="login-email" placeholder="Email Address" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password" id="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Login to Account</button>
+                
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-auth">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                </div>
+                
+                <div class="auth-footer">
+                    Don't have an account? <a href="#" class="switch-to-signup">Sign up</a>
+                </div>
+            </form>
+            
+            <!-- Sign Up Form -->
+            <form class="auth-form" id="signup-form">
+                <div class="form-group">
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="signup-email" placeholder="Email Address" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="terms-agree">
+                        <input type="checkbox" id="terms-agree" required>
+                        <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Create Account</button>
+                
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-auth">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                </div>
+                
+                <div class="auth-footer">
+                    Already have an account? <a href="#" class="switch-to-login">Login</a>
+                </div>
+            </form>
+            
+            <!-- Forgot Password Form -->
+            <form class="auth-form" id="forgot-form">
+                <div class="form-group">
+                    <input type="email" id="forgot-email" placeholder="Email Address" required>
+                </div>
+                
+                <p class="forgot-instructions">
+                    Enter your email address and we'll send you a link to reset your password.
+                </p>
+                
+                <button type="submit" class="btn submit-btn">Send Reset Link</button>
+                
+                <div class="auth-footer">
+                    <a href="#" class="switch-to-login">Back to Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Configuration - Update these with your backend and Google OAuth credentials -->
+    <script>
+        // Set your backend API URL here
+        window.API_BASE_URL = 'http://localhost:5000/api'; // Update with your deployed backend URL
+        
+        // Set your Google Client ID here (get it from https://console.cloud.google.com/)
+        window.GOOGLE_CLIENT_ID = '953100595516-sbb8e603dlrvn3td3vtj1mat0of1guin.apps.googleusercontent.com';
+    </script>
+    
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- JavaScript Files -->
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>  <!-- BEFORE store.js -->
+    <script src="store.js"></script>
+
+
+</body>
+</html>

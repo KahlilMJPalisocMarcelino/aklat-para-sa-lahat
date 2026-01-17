@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aklat - Para Sa Lahat</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo that returns to homepage -->
+                <a href="index.html" class="logo">
+                    <img src="Images/AklatLogoHeader.png" alt="Aklat Logo">
+                    <span class="logo-text">Aklat. Para Sa Lahat.</span>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="store.html" class="nav-link">Our Store</a>
+                    <a href="cart.html" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart <span id="cart-count">0</span>
+                    </a>
+                    
+                    <!-- Authentication Buttons -->
+                    <div class="auth-buttons" id="auth-buttons">
+                        <button class="btn login-btn" id="login-btn">Login</button>
+                        <button class="btn signup-btn" id="signup-btn">Sign Up</button>
+                    </div>
+                    
+                    <!-- User Menu (shown when logged in) -->
+                    <div class="user-menu" id="user-menu">
+                        <div class="user-avatar" id="user-avatar">
+                            <!-- Initials will be added dynamically -->
+                        </div>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="#profile"><i class="fas fa-user"></i> My Profile</a>
+                            <a href="#orders"><i class="fas fa-shopping-bag"></i> My Orders</a>
+                            <a href="cart.html"><i class="fas fa-shopping-cart"></i> My Cart</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Page Content -->
+    <main class="home-page" id="home-page">
+        <!-- Background Video -->
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="Videos/Underground Store In Manila.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <!-- About Us Section -->
+        <section class="about-us-container" id="about">
+            <div class="about-us-card">
+                <div class="image-section">
+                    <img src="Images/aboutUsPic.png" alt="Aklat's About Us">
+                </div>
+                <div class="text-section">
+                    <h2 class="about-us-title">Aklat's Mission, Vision and Goals: 2025 Overview</h2>
+                    <p class="about-us-description">
+                        Here at Aklat, we celebrate the rich and diverse heritage of Filipino literature and culture. 
+                        Our mission is to connect readers worldwide with the timeless stories, profound wisdom, 
+                        and vibrant voices of Filipino authors. Whether you're exploring the classics, discovering 
+                        modern masterpieces, or delving into children's tales that inspire young minds, our curated 
+                        selection of books brings the essence of the Philippines to life. Join us in preserving and 
+                        promoting the beauty of Filipino literature as we bridge generations and cultures, one story 
+                        at a time... <a href="#" class="read-more">Read More</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discount Section -->
+        <section class="discount-section">
+            <div class="discount-container">
+                <div class="discount-image">
+                    <img src="Images/Discount.jpg" alt="50% Discount Picture" class="discount-img">
+                </div>
+                <div class="discount-content">
+                    <h2 class="discount-title">Up to 50% Discount</h2>
+                    <p class="discount-text">
+                        Take advantage of our monthly book stalls where we offer discounts on signed books from your favorite writers. 
+                        Here at Aklat, we also offer a membership card where any reader like you can consistently support us.
+                        We value your commitment and loyalty towards the Aklat community therefore we felt it is most appropriate 
+                        that the more books you buy, the more opportunities should be provided for you.
+                    </p>
+                    <button class="btn discount-btn">Become a Member</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bestsellers Section -->
+        <section class="bestsellers-section" id="bestsellers">
+            <div class="section-header">
+                <h2 class="section-title">Our Current Best-Sellers</h2>
+                <p class="section-subtitle">Discover the most beloved Filipino literature.</p>
+            </div>
+            
+            <div class="products-container" id="bestsellers-container">
+                <!-- Bestseller books will be dynamically loaded here -->
+            </div>
+            
+            <div class="view-more">
+                <a href="store.html" class="btn view-more-btn">View Our Collection</a>
+            </div>
+        </section>
+
+        <!-- Community Leader Section -->
+        <section class="community-section">
+            <div class="community-container">
+                <h2 class="community-title">Want To Become a Community Leader?</h2>
+                <p class="community-text">
+                    Come and Join Us in Leading the Next Generation of Readers!
+                </p>
+                <button class="btn community-btn" id="learn-more-btn">Learn More</button>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-content">
+                    <h2 class="contact-title">Any Questions? <br>Contact Us.</h2>
+                    <p class="contact-text">
+                        We would love to get in touch with you!
+                        Whether you have a question about our books, online order assistance, 
+                        or anything related surrounding Aklat, feel free to reach us out.
+                    </p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Mabuhay Street, Barangay Maligaya, Quezon City, Metro Manila, Philippines</p>
+                        <p><i class="fas fa-envelope"></i> aklahat@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +63 912 345 6789</p>
+                    </div>
+                </div>
+
+            <!-- CONTACT FORM ADDED HERE -->
+            <div class="contact-form">
+                <h4>Send us a message</h4>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit"  class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="Images/AklatLogoFooter.png" alt="Aklat Logo">
+                    </a>
+                </div>
+
+                <div class="footer-nav">
+                    <h4 class="footer-title">Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="store.html">Our Collection</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contact Details</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Mabuhay Street, Barangay Maligaya, Quezon City, Metro Manila, Philippines</p>
+                    <p><i class="fas fa-envelope"></i> aklahat@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +63 912 345 6789</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">Copyright &copy; 2025 Aklat. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 id="modal-title">Welcome to Aklat</h3>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form class="auth-form active" id="login-form">
+                <div class="form-group">
+                    <input type="email" id="login-email" placeholder="Email Address" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password" id="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Login to Account</button>
+                
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-auth">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                </div>
+                
+                <div class="auth-footer">
+                    Don't have an account? <a href="#" class="switch-to-signup">Sign up</a>
+                </div>
+            </form>
+            
+            <!-- Sign Up Form -->
+            <form class="auth-form" id="signup-form">
+                <div class="form-group">
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="signup-email" placeholder="Email Address" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="terms-agree">
+                        <input type="checkbox" id="terms-agree" required>
+                        <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Create Account</button>
+                
+                <div class="auth-divider">
+                    <span>Or continue with</span>
+                </div>
+                
+                <div class="social-auth">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                </div>
+                
+                <div class="auth-footer">
+                    Already have an account? <a href="#" class="switch-to-login">Login</a>
+                </div>
+            </form>
+            
+            <!-- Forgot Password Form -->
+            <form class="auth-form" id="forgot-form">
+                <div class="form-group">
+                    <input type="email" id="forgot-email" placeholder="Email Address" required>
+                </div>
+                
+                <p class="forgot-instructions">
+                    Enter your email address and we'll send you a link to reset your password.
+                </p>
+                
+                <button type="submit" class="btn submit-btn">Send Reset Link</button>
+                
+                <div class="auth-footer">
+                    <a href="#" class="switch-to-login">Back to Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Configuration - Update these with your backend and Google OAuth credentials -->
+    <script>
+        // Set your backend API URL here
+        window.API_BASE_URL = 'http://localhost:5000/api'; // Update with your deployed backend URL
+        
+        // Set your Google Client ID here (get it from https://console.cloud.google.com/)
+        window.GOOGLE_CLIENT_ID = '953100595516-sbb8e603dlrvn3td3vtj1mat0of1guin.apps.googleusercontent.com';
+    </script>
+    
+    <!-- Google Sign-In -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- JavaScript Files -->
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
